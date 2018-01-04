@@ -85,7 +85,6 @@ export function updateItem(updatedItem) {
             dispatch(updateItemSuccess());
         }).catch(error => {
                 dispatch(updateItemFail());
-                console.log(error);
                 throw(error);
             }
         );

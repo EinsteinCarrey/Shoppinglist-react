@@ -7,11 +7,11 @@ import CreateItemForm from './CreateItemForm';
 import * as itemActions from '../../actions/itemActions';
 import JQuery from 'jquery';
 import {confirmAlert} from "react-confirm-alert";
-import LogoutButton from "../helperComponents/LogoutButton";
+import LogoutBtn from "../helperComponents/LogoutButton";
 import LoadingAnimation from "../helperComponents/LoadingAnimation";
 import * as listActions from "../../actions/listActions";
 import ShoppingListsOrderedList from "../lists/ShoppingListsOrderedList";
-import {Link, Redirect} from 'react-router'
+import {Link} from 'react-router';
 
 export class Items extends React.Component{
 
@@ -44,6 +44,14 @@ export class Items extends React.Component{
             },
             itemToBeUpdated: this.state.itemToBeUpdated
         };
+    }
+
+    componentDidMount(){
+        this.props.loadShoppingLists();
+        this.props.loadItems(this.state.currentShoppingList)
+            .then(() => {
+                initializeDataTable('#itemsTable');
+            });
     }
 
     componentWillReceiveProps(nextProps){
@@ -80,15 +88,6 @@ export class Items extends React.Component{
         }
     }
 
-    componentDidMount(){
-        console.log(this.props.params.id);
-        this.props.loadShoppingLists();
-        this.props.loadItems(this.state.currentShoppingList)
-            .then(() => {
-                initializeDataTable('#itemsTable');
-            });
-    }
-
     componentDidUpdate(prevProps, prevState){
         if(prevState.items !== this.state.items) {
             initializeDataTable('#itemsTable');
@@ -120,13 +119,13 @@ export class Items extends React.Component{
                 });
             },
             onCancel: () => {}
-        })
+        });
     };
 
     updateItem = (event) => {
         event.preventDefault();
         const updatedItem = Object.assign({}, this.state.itemToBeUpdated);
-        this.props.updateItem(updatedItem).then((item) => {
+        this.props.updateItem(updatedItem).then(() => {
             showNotification('success', 'Update Successful');
         }).catch((error) => {
             showNotification('error', error);
@@ -144,7 +143,6 @@ export class Items extends React.Component{
     };
 
     render(){
-        console.log("render "+Math.random());
         return(
             <div>
                 <div className="extreme-left">
@@ -157,7 +155,7 @@ export class Items extends React.Component{
                 </div>
                 <div className="mid-center">
                     <h3>Items</h3>
-                    <LogoutButton />
+                    <LogoutBtn />
                     {this.state.loading && <LoadingAnimation />}
                     <div id="shoppinglist">
                         <form onSubmit={this.updateItem}>

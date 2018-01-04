@@ -9,9 +9,10 @@ const middleWare = process.env.NODE_ENV === 'production' ?
     applyMiddleware(thunk) : composeEnhancers(applyMiddleware(thunk));
 
 export default initialState => {
+    // noinspection JSCheckFunctionSignatures
     return createStore(
         rootReducer,
         initialState,
         middleWare
     );
-}
+};

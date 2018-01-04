@@ -7,7 +7,7 @@ import CreateListForm from './CreateListForm';
 import * as listActions from '../../actions/listActions';
 import JQuery from 'jquery';
 import LoadingAnimation from '../helperComponents/LoadingAnimation';
-import LogoutButton from "../helperComponents/LogoutButton";
+import LogoutBtn from "../helperComponents/LogoutButton";
 import { confirmAlert } from 'react-confirm-alert';
 
 export class Lists extends React.Component{
@@ -47,6 +47,17 @@ export class Lists extends React.Component{
 
     }
 
+    componentDidMount(){
+        this.props.loadShoppingLists()
+            .then(() => {
+                initializeDataTable('#shoppinglistTable');
+            })
+            .catch(error => {
+                this.props.loadShoppingListsFail();
+                showNotification('error', error);
+            });
+    }
+
     componentWillReceiveProps(nextProps){
         if(nextProps.loading !== this.state.loading){
             this.setState({
@@ -66,17 +77,6 @@ export class Lists extends React.Component{
                 this.editList.listToUpdate = nextProps.updateList;
             }
         }
-    }
-
-    componentDidMount(){
-        this.props.loadShoppingLists()
-            .then(() => {
-                initializeDataTable('#shoppinglistTable');
-            })
-            .catch(error => {
-                this.props.loadShoppingListsFail();
-                showNotification('error', error);
-            });
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -110,7 +110,7 @@ export class Lists extends React.Component{
                 });
             },
             onCancel: () => {}
-        })
+        });
     };
 
     createShoppingList = (event) => {
@@ -128,7 +128,7 @@ export class Lists extends React.Component{
         return(
             <div className="mid-center">
                 <h3>My shopping-lists</h3>
-                <LogoutButton />
+                <LogoutBtn />
                 {this.state.loading && <LoadingAnimation />}
                 <div id="shoppinglist">
                     <ListsTable

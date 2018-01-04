@@ -26,7 +26,7 @@ describe('Test usersActions store manipulation ', () => {
         const expected = {
             username: "my_name",
             firstname: "john",
-            lastname: "doe",
+            lastname: "doe"
         };
         expect(actual).toEqual(expected);
     });
