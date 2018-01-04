@@ -36,7 +36,7 @@ export class Lists extends React.Component{
             },
             onblur: (event) => {
                 const updatedList = Object.assign({}, this.state.updateList);
-                props.updateShoppingList(updatedList).then((list) => {
+                props.updateShoppingList(updatedList).then(() => {
                     showNotification('success', 'Update Successful');
                 }).catch((error) => {
                     showNotification('error', error);
@@ -151,11 +151,20 @@ export class Lists extends React.Component{
 
 
 Lists.propTypes = {
-    existingShoppingList: PropTypes.array.isRequired
+    existingShoppingList: PropTypes.array.isRequired,
+    updateList: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    newShoppingList: PropTypes.func.isRequired,
+    createList: PropTypes.func.isRequired,
+    deleteShoppingList: PropTypes.func.isRequired,
+    loadShoppingListsFail: PropTypes.func.isRequired,
+    initializeListEditor: PropTypes.func.isRequired,
+    updateShoppingList: PropTypes.func.isRequired,
+    loadShoppingLists: PropTypes.func.isRequired
 };
 
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
     return {
         newShoppingList: state.lists.newShoppingList,
         updateList: state.edit,

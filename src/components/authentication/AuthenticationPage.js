@@ -108,7 +108,8 @@ AuthenticationPage.propTypes = {
     loginUser: PropTypes.func.isRequired,
     createUser: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    module: PropTypes.string.isRequired
 };
 
 AuthenticationPage.contextTypes = {

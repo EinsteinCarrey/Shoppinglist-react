@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {redirect} from "../../helper";
 
 export class LogoutButton extends React.Component{
@@ -24,5 +24,9 @@ export class LogoutButton extends React.Component{
         );
     }
 }
+
+LogoutButton.propTypes = {
+    loading: PropTypes.bool.isRequired
+};
 
 export default LogoutButton;

@@ -181,7 +181,19 @@ export class Items extends React.Component{
 
 
 Items.propTypes = {
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    initializeItemEditor: PropTypes.func.isRequired,
+    loadItems: PropTypes.func.isRequired,
+    loadShoppingLists: PropTypes.func.isRequired,
+    deleteItem: PropTypes.func.isRequired,
+    updateItem: PropTypes.func.isRequired,
+    createItem: PropTypes.func.isRequired,
+    currentShoppingList: PropTypes.array.isRequired,
+    itemToBeUpdated: PropTypes.array.isRequired,
+    newItem: PropTypes.array.isRequired,
+    existingShoppingList: PropTypes.array.isRequired,
+    params: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired
 };
 
 
