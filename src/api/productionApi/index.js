@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {reAuthenticateIfStatusCodeIs401} from "../../helper";
 
-const baseUrl = 'http://localhost:5000';
+const baseUrl = 'https://einstein-shoppinglist-api.herokuapp.com';
 const config = {
     headers: {'Authorization': 'Bearer '+localStorage.getItem('token')}
 };

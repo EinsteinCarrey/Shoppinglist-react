@@ -14,10 +14,11 @@ export const requireAuth = (nextState, replace) => {
 
 const reAuthenticate = ()=> {
     localStorage.clear();
-    // todo: show a explanation message
     showNotification('error', 'Your session has expired. Please login to continue');
     // todo: find a better way of redirecting
-    redirect();
+    setTimeout(() => {
+        redirect();
+    }, 1000);
 };
 
 export const reAuthenticateIfStatusCodeIs401 = (error) => {
