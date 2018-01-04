@@ -69,8 +69,8 @@ Tests files are in the same directories as the files being tested. After success
 
 Open a browser and access **[this location](http://localhost:3000/)**.
 
-You can access the hosted version  **[here](https://einsteins-shoppinglist.herokuapp.com/)**.
-https://einsteins-shoppinglist.herokuapp.com/
+You can access the hosted version  **[here](https://einsteins-react-app.herokuapp.com/)**.
+https://einsteins-react-app.herokuapp.com/
 
 
 ![Signup Screen](https://user-images.githubusercontent.com/21374761/34482328-52fa2abe-efc8-11e7-9eff-7112e661fac5.png)
