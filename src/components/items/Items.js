@@ -48,10 +48,7 @@ export class Items extends React.Component{
 
     componentDidMount(){
         this.props.loadShoppingLists();
-        this.props.loadItems(this.state.currentShoppingList)
-            .then(() => {
-                initializeDataTable('#itemsTable');
-            });
+        this.loadItemsFromCurrentShoppingList(this.state.currentShoppingList);
     }
 
     componentWillReceiveProps(nextProps){
@@ -60,7 +57,7 @@ export class Items extends React.Component{
             this.setState({
                 currentShoppingList: nextProps.params.id
             });
-            this.componentDidMount();
+            this.loadItemsFromCurrentShoppingList(nextProps.params.id);
         }
 
         if(nextProps.loading !== this.state.loading){
@@ -93,6 +90,13 @@ export class Items extends React.Component{
             initializeDataTable('#itemsTable');
         }
     }
+
+    loadItemsFromCurrentShoppingList = (currentShoppingList) => {
+        this.props.loadItems(currentShoppingList)
+            .then(() => {
+                initializeDataTable('#itemsTable');
+            });
+    };
 
     updateNewItemState = (event) => {
         const field = event.target.name;
@@ -156,7 +160,7 @@ export class Items extends React.Component{
 
                 </div>
                 <div className="mid-center">
-                    <h3>Items</h3>
+                    <h3><a>Items</a></h3>
                     <LogoutBtn />
                     {this.state.loading && <LoadingAnimation />}
                     <div id="shoppinglist">
