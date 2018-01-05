@@ -152,9 +152,9 @@ export class Lists extends React.Component{
 
 Lists.propTypes = {
     existingShoppingList: PropTypes.array.isRequired,
-    updateList: PropTypes.func.isRequired,
+    updateList: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired,
-    newShoppingList: PropTypes.func.isRequired,
+    newShoppingList: PropTypes.object.isRequired,
     createList: PropTypes.func.isRequired,
     deleteShoppingList: PropTypes.func.isRequired,
     loadShoppingListsFail: PropTypes.func.isRequired,

@@ -150,7 +150,9 @@ export class Items extends React.Component{
                         <Link to="/">My Shoppinglists</Link>
                     </h3>
 
-                    <ShoppingListsOrderedList lists={this.state.existingShoppingList} />
+                    <ShoppingListsOrderedList
+                        lists={this.state.existingShoppingList}
+                        currentShoppingList={this.state.currentShoppingList} />
 
                 </div>
                 <div className="mid-center">
@@ -188,9 +190,9 @@ Items.propTypes = {
     deleteItem: PropTypes.func.isRequired,
     updateItem: PropTypes.func.isRequired,
     createItem: PropTypes.func.isRequired,
-    currentShoppingList: PropTypes.array.isRequired,
-    itemToBeUpdated: PropTypes.array.isRequired,
-    newItem: PropTypes.array.isRequired,
+    currentShoppingList: PropTypes.string,
+    itemToBeUpdated: PropTypes.object.isRequired,
+    newItem: PropTypes.object.isRequired,
     existingShoppingList: PropTypes.array.isRequired,
     params: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired

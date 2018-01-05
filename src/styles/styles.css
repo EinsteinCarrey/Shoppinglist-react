@@ -132,8 +132,13 @@ ul li:hover{
     font-weight: bolder;
 }
 
-.active{
-    background-color: rgba(255, 255, 255, 0.7);
+.activeList a{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.activeList{
+    color: rgba(255, 255, 255, 0.9);
+    background-color: #337ab7;
     font-weight: bolder;
 }
 
@@ -433,68 +438,3 @@ ul li:hover{
 }
 
 /**********Confirm Dialog Box**************/
-
-/*.logout-link a {*/
-
-/*}*/
-
-/*.add-shoppingList {*/
-/*width: 80%;*/
-/*margin: auto;*/
-/*}*/
-
-/*.reference-links {*/
-/*color: #3f41ff;*/
-/*}*/
-
-/*.reference-links:hover {*/
-/*cursor: pointer;*/
-/*font-weight: 600;*/
-/*text-decoration: underline;*/
-/*}*/
-
-/*#shoppingListTable {*/
-    /*margin-left: auto;*/
-    /*width: 98%;*/
-/*}*/
-
-/*#shoppingListItemsTable {*/
-    /*margin-left: auto;*/
-/*}*/
-
-/*.shoppingList-items-form {*/
-    /*padding-top: 60px;*/
-/*}*/
-
-/*.float-right {*/
-    /*float: right;*/
-    /*width: 80%;*/
-    /*min-height: 200px;*/
-    /*border-left: 3px double #b8b8b8;*/
-/*}*/
-
-/*.float-left {*/
-    /*float: left;*/
-    /*width: 20%;*/
-    /*min-height: 200px;*/
-    /*list-style: none;*/
-/*}*/
-
-/*.float-left li {*/
-    /*border-bottom: 1px solid #d5d5d5;*/
-    /*padding-left: 10px;*/
-/*}*/
-
-/*.float-left li:hover {*/
-    /*background-color: #d5d5d5;*/
-    /*font-weight: bold;*/
-/*}*/
-
-/*#listItemHeader {*/
-    /*text-align: center;*/
-    /*width: 95%;*/
-/*}*/
-
-/*.center-content {*/
-    /*text-align: center;*/
-/*}*/

@@ -5,9 +5,6 @@ export class LogoutButton extends React.Component{
 
     constructor(props, context) {
         super(props, context);
-        this.state = {
-            loading: props.loading
-        };
     }
 
     logOutUser = (event) => {
@@ -24,9 +21,5 @@ export class LogoutButton extends React.Component{
         );
     }
 }
-
-LogoutButton.propTypes = {
-    loading: PropTypes.bool.isRequired
-};
 
 export default LogoutButton;
