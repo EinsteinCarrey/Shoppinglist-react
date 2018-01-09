@@ -6,7 +6,7 @@ function actionTypeEndsWithSuccess(type) {
 }
 
 function actionTypeEndsWithFail(type) {
-    return type.substring(type.length - 5) === '_FAIL';
+    return type === actionTypes.TERMINATE_AJAX_CALL;
 }
 
 export default function ajaxStatusReducer(state = initialState.ajaxCallsInProgress, action) {

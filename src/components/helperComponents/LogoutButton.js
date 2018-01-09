@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {redirect} from "../../helper";
 
 export class LogoutButton extends React.Component{

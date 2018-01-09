@@ -4,5 +4,8 @@ module.exports = {
         "src/**/*.{js,jsx}",
         "!src/api/**"
     ],
-    setupFiles: ["jest-localstorage-mock"]
+    setupFiles: [
+        "jest-localstorage-mock",
+        "./setupTests.js"
+    ]
 };

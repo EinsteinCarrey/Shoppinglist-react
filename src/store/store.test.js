@@ -1,7 +1,4 @@
-import expect from 'expect';
-import * as userActions from '../actions/userActions';
 import configureStore from "./configureStore";
-import * as listActions from "../actions/listActions";
 
 
 describe('Test usersActions store manipulation ', () => {
@@ -17,49 +14,15 @@ describe('Test usersActions store manipulation ', () => {
     };
     const token = "qws3456tghyGFrtyH7uhji87yujh";
 
-    it('Creates a user', () => {
-        const store = configureStore();
-        const action = userActions.createUserSuccess(user);
-        store.dispatch(action);
-
-        const actual = store.getState().user;
-        const expected = {
-            username: "my_name",
-            firstname: "john",
-            lastname: "doe"
-        };
-        expect(actual).toEqual(expected);
-    });
-
-    it('sets authentication token', () => {
-        const store = configureStore();
-        const action = userActions.authenticateUserSuccess(token);
-        store.dispatch(action);
-
-        const actual = store.getState().user.token;
-        const expected = token;
-        expect(actual).toEqual(expected);
-    });
-
-    it('Authentication fail reduces number of ajax calls', () => {
-        const store = configureStore();
-        const action = userActions.authenticateUserFail();
-        store.dispatch(action);
-
-        const actual = store.getState().ajaxCallsInProgress;
-        const expected = -1;
-        expect(actual).toEqual(expected);
-    });
-
-    it('Create User fail reduces number of ajax calls', () => {
-        const store = configureStore();
-        const action = userActions.createUserFail();
-        store.dispatch(action);
-
-        const actual = store.getState().ajaxCallsInProgress;
-        const expected = -1;
-        expect(actual).toEqual(expected);
-    });
+    // it('Create User fail reduces number of ajax calls', () => {
+    //     const store = configureStore();
+    //     const action = userActions.createUserFail();
+    //     store.dispatch(action);
+    //
+    //     const actual = store.getState().ajaxCallsInProgress;
+    //     const expected = -1;
+    //     expect(actual).toEqual(expected);
+    // });
     
 });
 
@@ -79,16 +42,6 @@ describe('Test lists store manipulation ', () => {
             user_id: 4567
         }
     ];
-
-    it('Can load shopping lists ', () => {
-
-        const action = listActions.loadShoppingListsSuccess(lists);
-        store.dispatch(action);
-
-        const actual = store.getState().lists.existingShoppingList;
-        const expected = lists;
-        expect(actual).toEqual(expected);
-    });
 
 });
 

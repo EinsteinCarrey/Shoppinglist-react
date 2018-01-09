@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import ItemsTable from './ItemsTable';
@@ -187,19 +188,19 @@ export class Items extends React.Component{
 
 
 Items.propTypes = {
-    items: PropTypes.array.isRequired,
-    initializeItemEditor: PropTypes.func.isRequired,
-    loadItems: PropTypes.func.isRequired,
-    loadShoppingLists: PropTypes.func.isRequired,
-    deleteItem: PropTypes.func.isRequired,
-    updateItem: PropTypes.func.isRequired,
-    createItem: PropTypes.func.isRequired,
+    items: PropTypes.array,
+    initializeItemEditor: PropTypes.func,
+    loadItems: PropTypes.func,
+    loadShoppingLists: PropTypes.func,
+    deleteItem: PropTypes.func,
+    updateItem: PropTypes.func,
+    createItem: PropTypes.func,
     currentShoppingList: PropTypes.string,
-    itemToBeUpdated: PropTypes.object.isRequired,
-    newItem: PropTypes.object.isRequired,
-    existingShoppingList: PropTypes.array.isRequired,
-    params: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    itemToBeUpdated: PropTypes.object,
+    newItem: PropTypes.object,
+    existingShoppingList: PropTypes.array,
+    params: PropTypes.object,
+    loading: PropTypes.bool
 };
 
 

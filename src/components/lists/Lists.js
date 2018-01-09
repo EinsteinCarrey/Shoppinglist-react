@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import ListsTable from './ListsTable';
@@ -48,14 +49,7 @@ export class Lists extends React.Component{
     }
 
     componentDidMount(){
-        this.props.loadShoppingLists()
-            .then(() => {
-                initializeDataTable('#shoppinglistTable');
-            })
-            .catch(error => {
-                this.props.loadShoppingListsFail();
-                showNotification('error', error);
-            });
+        this.props.loadShoppingLists();
     }
 
     componentWillReceiveProps(nextProps){
@@ -151,16 +145,15 @@ export class Lists extends React.Component{
 
 
 Lists.propTypes = {
-    existingShoppingList: PropTypes.array.isRequired,
-    updateList: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired,
-    newShoppingList: PropTypes.object.isRequired,
-    createList: PropTypes.func.isRequired,
-    deleteShoppingList: PropTypes.func.isRequired,
-    loadShoppingListsFail: PropTypes.func.isRequired,
-    initializeListEditor: PropTypes.func.isRequired,
-    updateShoppingList: PropTypes.func.isRequired,
-    loadShoppingLists: PropTypes.func.isRequired
+    existingShoppingList: PropTypes.array,
+    updateList: PropTypes.object,
+    loading: PropTypes.bool,
+    newShoppingList: PropTypes.object,
+    createList: PropTypes.func,
+    deleteShoppingList: PropTypes.func,
+    initializeListEditor: PropTypes.func,
+    updateShoppingList: PropTypes.func,
+    loadShoppingLists: PropTypes.func
 };
 
 
@@ -178,7 +171,6 @@ function mapDispatchToProps(dispatch) {
         deleteShoppingList: bindActionCreators(listActions.deleteShoppingList, dispatch),
         updateShoppingList: bindActionCreators(listActions.updateShoppingList, dispatch),
         loadShoppingLists: bindActionCreators(listActions.loadShoppingLists, dispatch),
-        loadShoppingListsFail: bindActionCreators(listActions.loadShoppingListsFail, dispatch),
         createList : bindActionCreators(listActions.createList, dispatch),
         initializeListEditor : bindActionCreators(listActions.initializeListEditor, dispatch)
     };

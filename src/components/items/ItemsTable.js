@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ItemsTableRow from './ItemsTableRow';
 
 const ItemsTable = ({items, editHandler, deleteHandler, loading}) => {
@@ -38,10 +39,10 @@ const ItemsTable = ({items, editHandler, deleteHandler, loading}) => {
 };
 
 ItemsTable.propTypes = {
-    items: PropTypes.array.isRequired,
-    editHandler: PropTypes.object.isRequired,
-    deleteHandler: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired
+    items: PropTypes.array,
+    editHandler: PropTypes.object,
+    deleteHandler: PropTypes.func,
+    loading: PropTypes.bool
 };
 
 export default ItemsTable;

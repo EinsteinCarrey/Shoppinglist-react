@@ -1,5 +1,6 @@
-import React, {PropTypes} from 'react';
-import {Link, browserHistory} from 'react-router';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userActions from '../../actions/userActions';
@@ -105,11 +106,11 @@ class AuthenticationPage extends React.Component{
 }
 
 AuthenticationPage.propTypes = {
-    loginUser: PropTypes.func.isRequired,
-    createUser: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired,
-    module: PropTypes.string.isRequired
+    loginUser: PropTypes.func,
+    createUser: PropTypes.func,
+    user: PropTypes.object,
+    loading: PropTypes.bool,
+    module: PropTypes.string
 };
 
 AuthenticationPage.contextTypes = {

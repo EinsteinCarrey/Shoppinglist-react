@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import TextInput from '../helperComponents/TextInput';
 
 const SignUpForm = ({user, onChange, onSubmit, loading}) => {
@@ -53,10 +54,10 @@ const SignUpForm = ({user, onChange, onSubmit, loading}) => {
 };
 
 SignUpForm.propTypes = {
-    user: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired
+    user: PropTypes.object,
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+    loading: PropTypes.bool
 };
 
 

@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import TextInput from '../helperComponents/TextInput';
 
 const ItemsTableRow = ({item, index, deleteHandler, editHandler, loading}) => {
@@ -73,12 +74,12 @@ const ItemsTableRow = ({item, index, deleteHandler, editHandler, loading}) => {
                         <button
                             onClick={editHandler.initialize}
                             className="btn btn-default edit-btn btn-xs">
-                            <i className="fa fa-pencil"></i>
+                            <i className="fa fa-pencil"/>
                         </button>
                         <button
                             onClick={deleteHandler}
                             className="btn btn-default delete-btn btn-xs">
-                            <i className="fa fa-trash"></i>
+                            <i className="fa fa-trash"/>
                         </button>
                     </td>
                 )
@@ -90,11 +91,11 @@ const ItemsTableRow = ({item, index, deleteHandler, editHandler, loading}) => {
 
 
 ItemsTableRow.propTypes = {
-    item: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired,
-    loading: PropTypes.bool.isRequired,
-    deleteHandler: PropTypes.func.isRequired,
-    editHandler: PropTypes.object.isRequired
+    item: PropTypes.object,
+    index: PropTypes.number,
+    loading: PropTypes.bool,
+    deleteHandler: PropTypes.func,
+    editHandler: PropTypes.object
 };
 
 export default ItemsTableRow;

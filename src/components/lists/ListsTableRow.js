@@ -1,5 +1,6 @@
-import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import TextInput from '../helperComponents/TextInput';
 
 const ListsTableRow = ({list, index, deleteHandler, editHandler, loading}) => {
@@ -33,13 +34,13 @@ const ListsTableRow = ({list, index, deleteHandler, editHandler, loading}) => {
                         editHandler.initialize}
                     disabled={loading === true || editHandler.listToUpdate.id === list.id.toString()}
                     className="btn btn-xs btn-default edit-btn">
-                    <i className="fa fa-pencil"></i>
+                    <i className="fa fa-pencil"/>
                 </button>
                 <button
                     disabled={loading === true}
                     onClick={loading === false && deleteHandler}
                     className="btn btn-xs btn-default delete-btn">
-                    <i className="fa fa-trash"></i>
+                    <i className="fa fa-trash"/>
                 </button>
             </td>
         </tr>
@@ -49,11 +50,11 @@ const ListsTableRow = ({list, index, deleteHandler, editHandler, loading}) => {
 
 
 ListsTableRow.propTypes = {
-    loading: PropTypes.bool.isRequired,
-    list: PropTypes.object.isRequired,
-    deleteHandler: PropTypes.func.isRequired,
-    editHandler: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired
+    loading: PropTypes.bool,
+    list: PropTypes.object,
+    deleteHandler: PropTypes.func,
+    editHandler: PropTypes.object,
+    index: PropTypes.number
 };
 
 export default ListsTableRow;

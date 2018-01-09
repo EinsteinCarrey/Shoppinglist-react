@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ListsTableRow from './ListsTableRow';
 
 const ListsTable = ({lists, editHandler, deleteHandler, loading}) => {
@@ -38,10 +39,10 @@ const ListsTable = ({lists, editHandler, deleteHandler, loading}) => {
 };
 
 ListsTable.propTypes = {
-    lists: PropTypes.array.isRequired,
-    editHandler: PropTypes.object.isRequired,
-    deleteHandler: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired
+    lists: PropTypes.array,
+    editHandler: PropTypes.object,
+    deleteHandler: PropTypes.func,
+    loading: PropTypes.bool
 };
 
 export default ListsTable;

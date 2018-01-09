@@ -1,4 +1,6 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const TextInput = ({
                        name = '',
@@ -36,7 +38,7 @@ TextInput.propTypes = {
     step: PropTypes.string,
     disabled: PropTypes.bool,
     onBlur: PropTypes.func,
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     value: PropTypes.string,
     minValue: PropTypes.string,
     type: PropTypes.string,

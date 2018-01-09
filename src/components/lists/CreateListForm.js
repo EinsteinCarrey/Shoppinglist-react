@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import TextInput from '../helperComponents/TextInput';
 
 const CreateListForm = ({list, onChange, onSubmit, loading}) => {
@@ -26,10 +27,10 @@ const CreateListForm = ({list, onChange, onSubmit, loading}) => {
 };
 
 CreateListForm.propTypes = {
-    list: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onSubmit: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired
+    list: PropTypes.object,
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+    loading: PropTypes.bool
 };
 
 export default CreateListForm;

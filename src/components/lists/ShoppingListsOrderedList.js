@@ -1,5 +1,6 @@
-import React, {PropTypes} from 'react';
-import {Link} from "react-router";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 const ShoppingListsOrderedList = ({lists, currentShoppingList}) => {
     return (
@@ -16,8 +17,8 @@ const ShoppingListsOrderedList = ({lists, currentShoppingList}) => {
 
 
 ShoppingListsOrderedList.propTypes = {
-    lists: PropTypes.array.isRequired,
-    currentShoppingList: PropTypes.string.isRequired
+    lists: PropTypes.array,
+    currentShoppingList: PropTypes.string
 };
 
 export default ShoppingListsOrderedList;
